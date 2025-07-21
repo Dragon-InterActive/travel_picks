@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../widgets/country_card.dart';
+import '../widgets/news_ticker.dart';
 
 //TravelHomePage
 class TravelHomePage extends StatefulWidget {
@@ -38,6 +39,14 @@ class _TravelHomePageState extends State<TravelHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    //Erstelle news-Liste
+    List<String> news = [
+      'EU ist nicht Europa',
+      'Die USA werden als Amerika bezeichnet, sind aber nur ein Teil des Kontinents',
+      'Trump macht Welle und will Kanada zum Teil der USA machen',
+      'Mexikaner in Aufruhr: Auch nicht Mexikaner sollen nach Mexiko abgeschoben werden',
+    ];
+
     return SingleChildScrollView(
       padding: const EdgeInsets.all(16),
       child: Column(
@@ -54,6 +63,8 @@ class _TravelHomePageState extends State<TravelHomePage> {
               ),
             ),
           ),
+          SizedBox(height: 24),
+          NewsTicker(news: news),
           SizedBox(height: 24),
           const Text("Europa", style: TextStyle(fontSize: 18)),
           const SizedBox(height: 8),
